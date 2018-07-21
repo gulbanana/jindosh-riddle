@@ -1,11 +1,8 @@
-namespace jindosh_riddle
+enum GuestName
 {
-    enum GuestName
-    {
-        LadyWinslow,
-        DoctorMarcolla,
-        CountessContee,
-        MadamNatsiou,
-        BaronessFinch
-    }
+    LadyWinslow,
+    DoctorMarcolla,
+    CountessContee,
+    MadamNatsiou,
+    BaronessFinch
 }
