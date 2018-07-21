@@ -13,24 +13,28 @@ class Program
 
         var solutions = new List<Solution>();
 
-        foreach (var positionP in permutations)
+        foreach (var nameP in permutations)
         {
-            foreach (var nameP in permutations)
+            foreach (var positionP in permutations)
             {
                 foreach (var colourP in permutations)
                 {
-                    var s = new Solution();
-                    for (var i = 0; i < 5; i++)
+                    foreach (var originP in permutations)
                     {
-                        s.Guests[i] = new Guest
+                        var s = new Solution();
+                        for (var i = 0; i < 5; i++)
                         {
-                            Position = positionP[i],
-                            Name = (GuestName)nameP[i],
-                            Colour = (GuestColour)colourP[i],
-                        };
-                    }
+                            s.Guests[i] = new Guest
+                            {
+                                Position = positionP[i],
+                                Name = (GuestName)nameP[i],
+                                Colour = (GuestColour)colourP[i],
+                                Origin = (GuestOrigin)originP[i]
+                            };
+                        }
 
-                    if (Constraints.IsValid(s)) solutions.Add(s);
+                        if (Constraints.IsValid(s)) solutions.Add(s);
+                    }
                 }
             }
         }
